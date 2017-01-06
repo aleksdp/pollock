@@ -1,0 +1,35 @@
+{
+  "name": "poll",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "answers": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "image": {
+      "type": "belongsTo",
+      "model": "image",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
