@@ -5,7 +5,11 @@ import View from '../../components/Polls/View'
 import {fetchData} from 'react-security-fetcher'
 import {bindActionCreators} from 'redux'
 
-@preload(({dispatch, fetchData, parameters})=>dispatch(fetchData(`/polls/${parameters.id}`, 'pollView')))
+@preload(({dispatch, fetchData, parameters})=>dispatch(fetchData(`/polls/${parameters.id}`, 'pollView', 'GET', {params: {
+    filter: JSON.stringify({
+        include: 'image'
+    })
+}})))
 @connect(state=>({
     pollView: state.fetchData.pollView.response
 }), dispatch=>({
